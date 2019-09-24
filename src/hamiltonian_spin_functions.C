@@ -857,3 +857,25 @@ void compute_si_z_sj_z(int num_sites,
       }
 }
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//// Ron Edit
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void compute_si_z_si_z(int num_sites,
+                   std::vector<double> const &vec_0,
+                   std::vector<int> const &maps_0,
+                   Matrix &si_si)
+{
+      int               ket_config;
+      int               num_pairs=num_sites*num_sites;
+      std::vector<int>  config;
+
+      si_si.resize(num_sites,num_sites);
+      for (int m=0;m<num_sites;m++)// Ron:  do I remove one of these sums?
+      {
+                       for (int j=0;j<vec_0.size();j++)
+                       {
+                            ket_config=maps_0[j];
+                            convert_num_to_vec(ket_config,2,num_sites,config);
+                            si_si(m,m)+=((vec_0[j]*vec_0[j]*(double(config[m])-1)*(double(config[m])-1)));// Ron: Here changed -0.5 to 
