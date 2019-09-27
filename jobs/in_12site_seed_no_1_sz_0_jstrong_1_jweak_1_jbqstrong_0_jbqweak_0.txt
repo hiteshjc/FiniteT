@@ -1,0 +1,12 @@
+seed=1
+hamiltonian=spin_model
+j_strong=1
+j_weak=1
+jbq_strong=0
+jbq_weak=0
+spin=1.0
+sz=0
+model_strong_triangles=[[0,10,8],[1,5,9],[2,6,4],[3,7,11]]
+model_weak_triangles=[[0,1,2],[3,4,5],[6,7,8],[9,10,11]]
+[ED]
+other_analyses=qddm_spin1

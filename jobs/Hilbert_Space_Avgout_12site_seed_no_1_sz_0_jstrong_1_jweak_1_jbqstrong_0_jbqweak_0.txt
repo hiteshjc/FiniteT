@@ -1,0 +1,180 @@
+MODEL STRONG TRIANGLES
+0  10  8  
+1  5  9  
+2  6  4  
+3  7  11  
+MODEL WEAK TRIANGLES
+0  1  2  
+3  4  5  
+6  7  8  
+9  10  11  
+Jstrong   =1
+Jweak     =1
+Jbq_strong=0
+Jbq_weak  =0
+Nsites    =12
+
+Done with Spin model setup
+Done with cloning Spin model
+QDDM for spin 1....
+Initialize...
+Map size =73789
+Lanczos for spins ...
+Making Hamiltonian (HERE)
+base    =3
+Hilbert =73789
+TRACE: Finished making Hamiltonian
+how_many_evecs =1
+cycle =0
+previous_evecs.size()0
+iterations = 10
+vs.size()  = 1
+=================================================================
+Doing Lanczos iteration = 0
+Time to perform Lanczos iteration 0 was 1 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -1.3560342446
+Previous Eig = +1000.0000000000
+Energy = -1.356034244640309 Matrix el = +1.000000000000000
+=================================================================
+Doing Lanczos iteration = 1
+Time to perform Lanczos iteration 1 was 0 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -6.4690392089
+Previous Eig = -1.3560342446
+Energy = -6.469039208940527 Matrix el = -0.732622772166832
+Energy = +4.567877879877730 Matrix el = -0.680634904851776
+=================================================================
+Doing Lanczos iteration = 2
+Time to perform Lanczos iteration 2 was 0 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -9.5336977191
+Previous Eig = -6.4690392089
+Energy = -9.533697719051005 Matrix el = -0.479863351074920
+Energy = -0.602416493628974 Matrix el = -0.796109469332605
+Energy = +8.982470742561278 Matrix el = +0.368701609888139
+=================================================================
+Doing Lanczos iteration = 3
+Time to perform Lanczos iteration 3 was 1 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -11.5688638559
+Previous Eig = -9.5336977191
+Energy = -11.568863855868610 Matrix el = -0.313435628227352
+Energy = -4.059092366548282 Matrix el = +0.711938174694863
+Energy = +4.027201596155023 Matrix el = -0.606153170480355
+Energy = +13.034959578549916 Matrix el = +0.165772362854866
+=================================================================
+Doing Lanczos iteration = 4
+Time to perform Lanczos iteration 4 was 0 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -13.0170776064
+Previous Eig = -11.5688638559
+Energy = -13.017077606381916 Matrix el = -0.208161843290875
+Energy = -6.658088601620644 Matrix el = -0.571763051454895
+Energy = +0.306409368625041 Matrix el = +0.688506809467987
+Energy = +7.673286856049559 Matrix el = -0.388224500266982
+Energy = +16.588774537215286 Matrix el = +0.070680766106468
+=================================================================
+Doing Lanczos iteration = 5
+Time to perform Lanczos iteration 5 was 0 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -14.0506758058
+Previous Eig = -13.0170776064
+Energy = -14.050675805759520 Matrix el = +0.143079984022358
+Energy = -8.657339982956222 Matrix el = +0.438232744526025
+Energy = -2.598830053153258 Matrix el = -0.660184076359699
+Energy = +3.859376120309479 Matrix el = +0.546217016404779
+Energy = +10.593240515056046 Matrix el = -0.227969022395958
+Energy = +18.968689620263703 Matrix el = +0.036252736946792
+=================================================================
+Doing Lanczos iteration = 6
+Time to perform Lanczos iteration 6 was 1 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -14.7911870776
+Previous Eig = -14.0506758058
+Energy = -14.791187077585398 Matrix el = +0.102340861222362
+Energy = -10.220791161647742 Matrix el = +0.330388907140992
+Energy = -4.923240215960332 Matrix el = +0.578828869652105
+Energy = +0.800419139702362 Matrix el = +0.612565386696086
+Energy = +6.774968894710003 Matrix el = +0.391279586584680
+Energy = +13.106127756409817 Matrix el = -0.128331672350542
+Energy = +20.346049002430103 Matrix el = +0.022837947268151
+=================================================================
+Doing Lanczos iteration = 7
+Time to perform Lanczos iteration 7 was 0 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -15.3266109337
+Previous Eig = -14.7911870776
+Energy = -15.326610933701637 Matrix el = -0.076065950846965
+Energy = -11.456126398109028 Matrix el = +0.249231476880592
+Energy = -6.810273248499060 Matrix el = +0.482991501851797
+Energy = -1.724476593817632 Matrix el = -0.605622679131141
+Energy = +3.620741614579128 Matrix el = +0.504419605110525
+Energy = +9.093259051379572 Matrix el = +0.267329167037295
+Energy = +15.106743583331383 Matrix el = -0.076492979833545
+Energy = +21.096613335502216 Matrix el = +0.016817377384864
+=================================================================
+Doing Lanczos iteration = 8
+Time to perform Lanczos iteration 8 was 0 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -15.7221489401
+Previous Eig = -15.3266109337
+Energy = -15.722148940095311 Matrix el = +0.058379266328168
+Energy = -12.441510959432685 Matrix el = +0.189976443027828
+Energy = -8.351346229731689 Matrix el = -0.393476910920049
+Energy = -3.802142729006051 Matrix el = -0.557670050167555
+Energy = +1.042696169323549 Matrix el = +0.557083099581381
+Energy = +6.040606006181129 Matrix el = +0.388249524717791
+Energy = +11.071985834724234 Matrix el = +0.175781510033352
+Energy = +16.588340512159206 Matrix el = -0.050121733768048
+Energy = +21.496105597830553 Matrix el = +0.013793017367605
+=================================================================
+Doing Lanczos iteration = 9
+Time to perform Lanczos iteration 9 was 0 seconds
+=================================================================
+Time to build  T was 0 seconds
+Time to diagonalize T was 0 seconds
+Eigs[0]      = -16.0262871443
+Previous Eig = -15.7221489401
+Energy = -16.026287144333171 Matrix el = -0.045807509889292
+Energy = -13.236101088923322 Matrix el = -0.147158817412640
+Energy = -9.611464937902984 Matrix el = +0.318383282623264
+Energy = -5.514975439207213 Matrix el = -0.492667161096018
+Energy = -1.115950806731056 Matrix el = -0.559677170632904
+Energy = +3.453296229659445 Matrix el = -0.471362282208741
+Energy = +8.109972571164635 Matrix el = +0.287284212673864
+Energy = +12.878801016515743 Matrix el = +0.113362099825624
+Energy = +17.745727461452979 Matrix el = -0.034767725901966
+Energy = +21.725866288868701 Matrix el = +0.012008018549482
+
+
+Making all Ritz eigenvectors and corresponding matrix elements
+Energy = -16.026287144333171 Matrix el = -0.045807509889292  <Siz2> = -0.366506466851812
+Energy = -13.236101088923322 Matrix el = -0.147158817412640  <Siz2> = -1.170130979174965
+Energy = -9.611464937902984 Matrix el = +0.318383282623264  <Siz2> = +2.553506490838439
+Energy = -5.514975439207213 Matrix el = -0.492667161096017  <Siz2> = -3.878674680778881
+Energy = -1.115950806731056 Matrix el = -0.559677170632904  <Siz2> = -4.391523029210833
+Energy = +3.453296229659445 Matrix el = -0.471362282208741  <Siz2> = -3.667072397867788
+Energy = +8.109972571164635 Matrix el = +0.287284212673864  <Siz2> = +2.188871083470980
+Energy = +12.878801016515743 Matrix el = +0.113362099825624  <Siz2> = +0.832802521474734
+Energy = +17.745727461452979 Matrix el = -0.034767725901966  <Siz2> = -0.241187194450896
+Energy = +21.725866288868701 Matrix el = +0.012008018549482  <Siz2> = +0.074472256946382
+Done here, now exiting 

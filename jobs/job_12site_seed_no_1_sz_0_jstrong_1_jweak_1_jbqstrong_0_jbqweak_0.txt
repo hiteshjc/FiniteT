@@ -1,0 +1,9 @@
+#!/bin/bash -l
+#Batch Queue Script
+#SBATCH --time=4:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=24
+#SBATCH -p genacc_q
+export OMP_NUM_THREADS=24
+/gpfs/home/hchanglani/gittests/FiniteT/ed in_12site_seed_no_1_sz_0_jstrong_1_jweak_1_jbqstrong_0_jbqweak_0.txt > /gpfs/home/hchanglani/gittests/FiniteT/jobs/Hilbert_Space_Avgout_12site_seed_no_1_sz_0_jstrong_1_jweak_1_jbqstrong_0_jbqweak_0.txt
