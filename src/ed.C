@@ -1054,7 +1054,7 @@ void lanczos_given_map_return_multiple_evecs(Ham &h,
    int 		      				size=map.size();
    double 	      				spin;
    bool 	      				orth_failed;
-   int iterations=10;                           //# M
+   int iterations=100;                           //# M
    iterations=min(iterations,size);
    how_many_evecs=min(how_many_evecs,size);
    eigs.resize(iterations);
