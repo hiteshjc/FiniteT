@@ -194,4 +194,10 @@ void compute_si_minus_sj_minus(int num_sites,
    	 	   std::vector<int> const &inverse_map,
 		   Matrix &si_sj);
 
+void compute_sum_siz2(int num_sites,
+                   std::vector<double> const &vec_bra,
+                   std::vector<double> const &vec_ket,
+                   std::vector<int> const &maps_0,
+                   double &matrix_el);
+
 #endif

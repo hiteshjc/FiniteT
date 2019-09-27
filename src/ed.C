@@ -1054,17 +1054,19 @@ void lanczos_given_map_return_multiple_evecs(Ham &h,
    int 		      				size=map.size();
    double 	      				spin;
    bool 	      				orth_failed;
-   int iterations=200;                           //# M
+   int iterations=10;                           //# M
    iterations=min(iterations,size);
    how_many_evecs=min(how_many_evecs,size);
    eigs.resize(iterations);
    double 					dif,tmp;
    double					q,alpha,beta,norm;
    complex<double> 				c_first_second,tot;
+   int 						num_sites=h.num_sites;
    std::vector<int> 				config(h.num_sites),new_configs;
    std::vector<double> 				alphas,betas;
    std::vector<double> 				h_dot_v(size),w(size);
    std::vector<double> 				v_p(size),v_o(size);
+   std::vector<double> 				starting_vector_called_r(size);
    std::vector<double> 				v_p_old(size);
    std::vector<double>				ritz_eigenvec(size);
    //std::vector< std::vector<int> > 		vec_new_configs(size);
@@ -1117,6 +1119,9 @@ void lanczos_given_map_return_multiple_evecs(Ham &h,
    for (int num=0;num<how_many_evecs;num++)
    {
    	for (int i=0;i<size;i++) v_p[i]=2.0*uniform_rnd()-1.0;
+	starting_vector_called_r=v_p; 
+	normalize(starting_vector_called_r); 
+
         previous_eig=1000.0;
 	for (int cycle=0;cycle<ncycles;cycle++)
 	{
@@ -1146,7 +1151,7 @@ void lanczos_given_map_return_multiple_evecs(Ham &h,
 		betas.clear();
 		betas.push_back(beta);
 		alphas.clear();
-		//vs.push_back(v_p);
+		vs.push_back(v_p);
 
 		if (ipr)
 		{
@@ -1267,7 +1272,7 @@ void lanczos_given_map_return_multiple_evecs(Ham &h,
 		  //      		dscal(size,1.0/norm,&*v_p.begin(),1);
 		  //             }
 		  //     }
-		       //vs.push_back(v_p);     
+		       vs.push_back(v_p);     
 		       time (&end);
 		       dif=difftime(end,start);
 		       
@@ -1312,15 +1317,27 @@ void lanczos_given_map_return_multiple_evecs(Ham &h,
 			    }	
 
 		}
-		if (ipr) {cout<<"Making lowest Ritz eigenvector"<<endl;}
-		/*#pragma omp parallel for
-		for (int i=0;i<size;i++)
+		cout<<endl;
+		cout<<endl;
+		if (ipr) {cout<<"Making all Ritz eigenvectors and corresponding matrix elements"<<endl;}
+		for (int vec=0;vec<iterations;vec++)
 		{
-			ritz_eigenvec[i]=0.0;
-			for (int k=0;k<vs.size();k++){ritz_eigenvec[i]+=vs[k][i]*t_eigenvecs(k,0);}
+			#pragma omp parallel for
+			for (int i=0;i<size;i++)
+			{
+				ritz_eigenvec[i]=0.0;
+				for (int k=0;k<vs.size();k++){ritz_eigenvec[i]+=vs[k][i]*t_eigenvecs(k,vec);}
+			}
+			double sum_siz2_matrix_el=0.0;
+			//compute_sum_siz2(num_sites,starting_vector_called_r,ritz_eigenvec,maps_0,sum_siz2_matrix_el);	
+			double innerprod=ddotk(size,starting_vector_called_r,ritz_eigenvec);	
+			//print_vec_acc(starting_vector_called_r,true,size);
+			//print_vec_acc(ritz_eigenvec,true,size);
+			compute_sum_siz2(num_sites,starting_vector_called_r,ritz_eigenvec,map,sum_siz2_matrix_el);	
+	       		cout<<boost::format("Energy = %+.15f Matrix el = %+.15f  <Siz2> = %+.15f") %eigs[vec] %innerprod %sum_siz2_matrix_el<<endl;
 		}
 		//for (int i=0;i<vs.size();i++) {cout<<" Energy = "<<eigs[i]<<"  Matrix element = "<<t_eigenvecs(0,i)<<endl;}
-		for (int i=0;i<size;i++) v_p[i]=ritz_eigenvec[i]+(uniform_rnd()*0.00000);	*/
+		//for (int i=0;i<size;i++) v_p[i]=ritz_eigenvec[i]+(uniform_rnd()*0.00000);	*/
 	}
 	//previous_evecs.push_back(ritz_eigenvec);
 	//cout<<"Eigenvalue number "<<num<<" = "<<boost::format("%+.10f") %eigs[0]<<endl;
